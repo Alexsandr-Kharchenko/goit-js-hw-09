@@ -16,6 +16,7 @@ if (savedData) {
 
 form.addEventListener('input', e => {
   const { name, value } = e.target;
+  if (!(name in formData)) return;
   formData[name] = value.trim();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 });
